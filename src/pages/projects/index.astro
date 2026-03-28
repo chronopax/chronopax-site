@@ -1,0 +1,118 @@
+---
+import RootLayout from "../../layouts/RootLayout.astro";
+---
+
+<RootLayout title="Projects — Chronopax" description="What Joe Burley is building." width="md">
+  <section class="page-header">
+    <span class="eyebrow">What I'm building</span>
+    <h1>Projects</h1>
+  </section>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <span class="card-tag">Live Project</span>
+      <h2 class="card-title">Document Intelligence Platform</h2>
+      <p class="card-desc">CUI-compliant document pipeline on Azure Government.</p>
+      <a href="#" class="card-cta">Try it →</a>
+    </div>
+    <div class="project-card">
+      <span class="card-tag">In Development</span>
+      <h2 class="card-title">Secure Email System</h2>
+      <p class="card-desc">Self-hosted encrypted communications built for compliance.</p>
+      <a href="#" class="card-cta">Follow progress →</a>
+    </div>
+    <div class="project-card">
+      <span class="card-tag">Architecture</span>
+      <h2 class="card-title">CMMC Lab Stack</h2>
+      <p class="card-desc">Full homelab architecture for CMMC Level 2 compliance.</p>
+      <a href="#" class="card-cta">Read more →</a>
+    </div>
+    <div class="project-card placeholder">
+      <span class="card-tag">Coming Soon</span>
+      <h2 class="card-title">More coming soon</h2>
+      <p class="card-desc">Additional projects in progress. Check back soon.</p>
+    </div>
+  </div>
+</RootLayout>
+
+<style lang="scss">
+  .page-header {
+    margin: 3rem 0 2rem;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    color: var(--color-accent-teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .project-card {
+    background: var(--color-bg-card);
+    border: 0.5px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: var(--color-accent-orange);
+    }
+
+    &.placeholder {
+      opacity: 0.5;
+    }
+
+    .card-tag {
+      display: block;
+      font-size: 11px;
+      color: var(--color-accent-teal);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    .card-cta {
+      font-size: 0.875rem;
+      color: var(--color-accent-orange);
+      margin-top: 0.75rem;
+      display: block;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+</style>

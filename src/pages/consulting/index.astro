@@ -1,0 +1,138 @@
+---
+import RootLayout from "../../layouts/RootLayout.astro";
+---
+
+<RootLayout title="Consulting — Chronopax" description="Work with Joe Burley on cloud architecture, Azure Government, CMMC compliance, and AI systems." width="md">
+  <div class="page-header">
+    <span class="eyebrow">Work with me</span>
+    <h1>Consulting</h1>
+  </div>
+
+  <section class="intro-section">
+    <p>
+      Available for cloud architecture, Azure Government, CMMC compliance,
+      AI systems integration, and security infrastructure projects.
+      Open to contract/project work and select full-time opportunities.
+    </p>
+    <a href="/contact" class="btn btn-primary">Get in touch →</a>
+  </section>
+
+  <section class="creds-section">
+    <h2>Certifications</h2>
+    <a href="https://credly.com/users/joeburley" target="_blank" rel="noopener" class="credly-link">
+      View verified credentials on Credly →
+    </a>
+  </section>
+
+  <section class="support-section">
+    <h2>Support the work</h2>
+    <p>Interested in supporting ongoing open source and research projects?</p>
+    <div class="support-links">
+      <a href="#" class="btn btn-outline">GitHub Sponsors</a>
+      <a href="#" class="btn btn-outline">Ko-fi</a>
+    </div>
+  </section>
+</RootLayout>
+
+<style lang="scss">
+  .page-header {
+    margin: 3rem 0 2rem;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    color: var(--color-accent-teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .intro-section {
+    margin-bottom: 3rem;
+
+    p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .creds-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .credly-link {
+    color: var(--color-accent-orange);
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .support-section {
+    margin-bottom: 4rem;
+
+    p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .support-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+
+    &.btn-primary {
+      background: var(--color-accent-orange);
+      color: #fff;
+      border: 1px solid var(--color-accent-orange);
+
+      &:hover {
+        background: var(--color-accent-orange-dark);
+        border-color: var(--color-accent-orange-dark);
+      }
+    }
+
+    &.btn-outline {
+      background: transparent;
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-border-hover);
+
+      &:hover {
+        border-color: var(--color-accent-orange);
+        color: var(--color-accent-orange);
+      }
+    }
+  }
+</style>

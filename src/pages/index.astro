@@ -1,0 +1,233 @@
+---
+import RootLayout from "../layouts/RootLayout.astro";
+import siteConfig from '../../content/site.json';
+
+const SITE_TITLE = siteConfig.title;
+const SITE_DESCRIPTION = siteConfig.description;
+---
+
+<RootLayout title={SITE_TITLE} description={SITE_DESCRIPTION} width="md">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1 class="hero-name">Joe Burley</h1>
+      <p class="hero-title">Architect. Builder. The one who makes it work.</p>
+      <p class="hero-bio">
+        I build cloud infrastructure, AI systems, and security stacks
+        that handle what actually matters. Based in San Diego.
+        Available for consulting — reach out if you have something worth building.
+      </p>
+      <div class="hero-links">
+        <a href="https://linkedin.com/in/joeburley" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+        <a href="https://credly.com/users/joeburley" target="_blank" rel="noopener" class="btn btn-outline">Credly</a>
+        <a href="/contact" class="btn btn-primary">Contact</a>
+      </div>
+    </div>
+    <div class="hero-avatar">
+      <img src="/avatar.png" alt="Joe Burley" />
+    </div>
+  </section>
+
+  <!-- Pinned Projects -->
+  <section class="projects-section">
+    <div class="section-header">
+      <span class="eyebrow">What I'm building</span>
+      <h2>Projects</h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <span class="card-tag">Live Project</span>
+        <h3 class="card-title">Document Intelligence Platform</h3>
+        <p class="card-desc">CUI-compliant document pipeline on Azure Government.</p>
+        <a href="#" class="card-cta">Try it →</a>
+      </div>
+      <div class="project-card">
+        <span class="card-tag">In Development</span>
+        <h3 class="card-title">Secure Email System</h3>
+        <p class="card-desc">Self-hosted encrypted communications built for compliance.</p>
+        <a href="#" class="card-cta">Follow progress →</a>
+      </div>
+      <div class="project-card">
+        <span class="card-tag">Architecture</span>
+        <h3 class="card-title">CMMC Lab Stack</h3>
+        <p class="card-desc">Full homelab architecture for CMMC Level 2 compliance.</p>
+        <a href="#" class="card-cta">Read more →</a>
+      </div>
+    </div>
+  </section>
+</RootLayout>
+
+<style lang="scss">
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    margin: 3rem 0 4rem;
+
+    @media (max-width: 700px) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      margin: 2rem 0 3rem;
+    }
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+
+  .hero-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.1rem;
+    color: var(--color-accent-orange);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .hero-bio {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 480px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+
+    &.btn-primary {
+      background: var(--color-accent-orange);
+      color: #fff;
+      border: 1px solid var(--color-accent-orange);
+
+      &:hover {
+        background: var(--color-accent-orange-dark);
+        border-color: var(--color-accent-orange-dark);
+      }
+    }
+
+    &.btn-outline {
+      background: transparent;
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-border-hover);
+
+      &:hover {
+        border-color: var(--color-accent-orange);
+        color: var(--color-accent-orange);
+      }
+    }
+  }
+
+  .hero-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-accent-orange);
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+
+  .projects-section {
+    margin-bottom: 3rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    color: var(--color-accent-teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .project-card {
+    background: var(--color-bg-card);
+    border: 0.5px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: var(--color-accent-orange);
+    }
+
+    .card-tag {
+      display: block;
+      font-size: 11px;
+      color: var(--color-accent-teal);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+
+    .card-cta {
+      font-size: 0.875rem;
+      color: var(--color-accent-orange);
+      margin-top: 0.75rem;
+      display: block;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+</style>

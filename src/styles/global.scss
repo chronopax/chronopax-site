@@ -1,0 +1,125 @@
+@use "colors";
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+* {
+  color: var(--color-foreground);
+}
+
+// =============================================
+// Chronopax — Day/Night Background System
+// =============================================
+
+body {
+  background-image: url('/bg-night.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  background-attachment: fixed;
+  background-color: var(--color-bg-secondary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 12, 20, 0.58);
+  z-index: 0;
+  pointer-events: none;
+}
+
+html:not(.dark) body {
+  background-image: url('/bg-day.jpg');
+}
+
+html:not(.dark) body::before {
+  background: rgba(255, 248, 235, 0.32);
+}
+
+// All content must sit above the overlay
+main, header, footer, nav {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+a,
+ul,
+ol,
+li,
+td,
+th
+{
+  font-family: 'Comic Neue', 'Klee One', sans-serif;
+  letter-spacing: .75px;
+  word-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  box-sizing: border-box;
+  color: var(--color-foreground);
+
+  &.emphasize {
+    color: var(--color-primary);
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5em;
+}

@@ -1,0 +1,87 @@
+---
+import RootLayout from "../../layouts/RootLayout.astro";
+---
+
+<RootLayout title="Shop — Chronopax" description="Gear & Resources" width="md">
+  <div class="page-header">
+    <span class="eyebrow">Gear & Resources</span>
+    <h1>Shop</h1>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-image-placeholder"></div>
+      <h2 class="product-title">Coming Soon</h2>
+      <p class="product-desc">Check back soon.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-image-placeholder"></div>
+      <h2 class="product-title">Coming Soon</h2>
+      <p class="product-desc">Check back soon.</p>
+    </div>
+    <div class="product-card">
+      <div class="product-image-placeholder"></div>
+      <h2 class="product-title">Coming Soon</h2>
+      <p class="product-desc">Check back soon.</p>
+    </div>
+  </div>
+</RootLayout>
+
+<style lang="scss">
+  .page-header {
+    margin: 3rem 0 2rem;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    color: var(--color-accent-teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .product-card {
+    background: var(--color-bg-card);
+    border: 0.5px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+
+    .product-image-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--color-bg-hover);
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .product-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .product-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+  }
+</style>

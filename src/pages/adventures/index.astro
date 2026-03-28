@@ -1,0 +1,61 @@
+---
+import RootLayout from '@/layouts/RootLayout.astro';
+import siteConfig from '../../../content/site.json';
+import {getCollection} from 'astro:content';
+import PostCard from "@/components/PostCard.astro";
+
+const SITE_TITLE = siteConfig.title;
+const SITE_DESCRIPTION = siteConfig.description;
+
+const posts = (await getCollection('blog'))
+    .filter(post => !post.data.draft)
+    .sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    );
+---
+
+<RootLayout title={`Adventures — ${SITE_TITLE}`} description="Field notes & technical writing." width="lg">
+  <div class="page-header">
+    <span class="eyebrow">Field notes & technical writing</span>
+    <h1>Adventures</h1>
+  </div>
+  <section class="posts-grid">
+    {
+      posts.map((post) => (
+        <PostCard {...post.data} slug={post.id}/>
+      ))
+    }
+  </section>
+</RootLayout>
+
+<style>
+  .page-header {
+    padding: 3rem 2rem 0;
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    color: var(--color-accent-teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    max-width: 90rem;
+    margin: 2rem auto;
+    padding: 0 2rem 2rem;
+  }
+</style>

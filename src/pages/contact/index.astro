@@ -1,0 +1,136 @@
+---
+import RootLayout from "../../layouts/RootLayout.astro";
+---
+
+<RootLayout title="Contact — Chronopax" description="Get in touch with Joe Burley." width="sm">
+  <div class="page-header">
+    <span class="eyebrow">Reach out</span>
+    <h1>Get in Touch</h1>
+  </div>
+
+  <form class="contact-form" action="#" method="POST">
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="field">
+      <label for="subject">What's this about?</label>
+      <select id="subject" name="subject" required>
+        <option value="" disabled selected>Select a topic</option>
+        <option value="consulting">Consulting inquiry</option>
+        <option value="collaboration">Project collaboration</option>
+        <option value="general">General question</option>
+        <option value="other">Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required minlength="50" rows="6"></textarea>
+      <span class="field-hint">Please include enough detail for me to respond usefully.</span>
+    </div>
+
+    <!-- Cloudflare Turnstile — site key to be added in future session -->
+    <div id="turnstile-widget"></div>
+
+    <button type="submit" class="btn-submit">Send Message</button>
+  </form>
+
+  <p class="footer-note">I read every message personally. Expect a response within a few days.</p>
+</RootLayout>
+
+<style lang="scss">
+  .page-header {
+    margin: 3rem 0 2rem;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    color: var(--color-accent-teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+
+    input,
+    select,
+    textarea {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      color: var(--color-text-primary);
+      transition: border-color 0.2s;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+        border-color: var(--color-accent-orange);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  .field-hint {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .btn-submit {
+    align-self: flex-start;
+    background: var(--color-accent-orange);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: var(--color-accent-orange-dark);
+    }
+  }
+
+  .footer-note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+  }
+</style>

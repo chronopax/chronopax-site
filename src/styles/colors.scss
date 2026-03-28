@@ -1,0 +1,81 @@
+// =============================================
+// Chronopax — Volcanic Dark + Tropical Palette
+// =============================================
+
+:root {
+  // Base — volcanic charcoal (dark mode default)
+  --color-bg-primary:          #141412;
+  --color-bg-secondary:        #1a1a18;
+  --color-bg-card:             #222220;
+  --color-bg-hover:            #2e2e2a;
+
+  // Text — warm parchment scale
+  --color-text-primary:        #f0e8d0;
+  --color-text-secondary:      #8a8a7a;
+  --color-text-muted:          #5a5a4e;
+
+  // Tropical accent pops
+  --color-accent-orange:       #d4813a;
+  --color-accent-orange-dark:  #c46a28;
+  --color-accent-orange-light: #e8a060;
+  --color-accent-teal:         #4fa882;
+  --color-accent-teal-dark:    #3a8a68;
+  --color-accent-red:          #c94c3a;
+
+  // Gradient accent bar
+  --gradient-accent: linear-gradient(90deg, #d4813a, #4fa882, #c94c3a);
+
+  // Borders
+  --color-border:              #2e2e2a;
+  --color-border-hover:        #3a3a34;
+
+  // Legacy compatibility (used by Koibumi components)
+  --color-primary:             #d4813a;
+  --color-background:          #141412;
+  --color-foreground:          #f0e8d0;
+  --color-muted-foreground:    #8a8a7a;
+  --color-card:                #222220;
+  --color-highlight:           #4fa882;
+  --color-primary-hover:       #c46a28;
+  --color-primary-light:       #2e2e2a;
+  --color-code-bg:             #1a1a18;
+  --color-code-fg:             #f0e8d0;
+  --color-code-inline-bg:      #2e2e2a;
+  --color-code-inline-fg:      #f0e8d0;
+}
+
+// Light mode (day theme) — overrides when .dark class is absent
+html:not(.dark) {
+  --color-bg-primary:          #f5ede0;
+  --color-bg-secondary:        #ede0cc;
+  --color-bg-card:             #faf4ea;
+  --color-bg-hover:            #e0d4c0;
+
+  --color-text-primary:        #1e140a;
+  --color-text-secondary:      #7a6848;
+  --color-text-muted:          #9a8868;
+
+  --color-accent-orange:       #c46a28;
+  --color-accent-orange-dark:  #a85520;
+  --color-accent-orange-light: #d4813a;
+  --color-accent-teal:         #3a8a68;
+  --color-accent-teal-dark:    #2a6a50;
+  --color-accent-red:          #a83828;
+
+  --color-border:              #d8c8a8;
+  --color-border-hover:        #c8b898;
+
+  // Legacy compatibility
+  --color-primary:             #c46a28;
+  --color-background:          #f5ede0;
+  --color-foreground:          #1e140a;
+  --color-muted-foreground:    #7a6848;
+  --color-card:                #faf4ea;
+  --color-highlight:           #3a8a68;
+  --color-primary-hover:       #a85520;
+  --color-primary-light:       #ede0cc;
+  --color-code-bg:             #ede0cc;
+  --color-code-fg:             #1e140a;
+  --color-code-inline-bg:      #e0d4c0;
+  --color-code-inline-fg:      #1e140a;
+}
