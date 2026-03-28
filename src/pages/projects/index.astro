@@ -10,28 +10,35 @@ import RootLayout from "../../layouts/RootLayout.astro";
 
   <div class="projects-grid">
     <div class="project-card">
-      <span class="card-tag">Live Project</span>
-      <h2 class="card-title">Document Intelligence Platform</h2>
-      <p class="card-desc">CUI-compliant document pipeline on Azure Government.</p>
-      <a href="#" class="card-cta">Try it →</a>
+      <span class="card-tag">Open Source</span>
+      <h2 class="card-title">Email Cleaner Agent</h2>
+      <p class="card-desc">An autonomous email management agent with a contributor economy
+        model. AGPL-3.0 licensed with a dual-licensing path for commercial use.
+        Built for people who want their inbox handled without giving up control.</p>
+      <a href="#" class="card-cta">Learn more →</a>
+      <a href="/contact" class="card-interest">Interested in contributing or following development? Get in touch →</a>
     </div>
     <div class="project-card">
       <span class="card-tag">In Development</span>
-      <h2 class="card-title">Secure Email System</h2>
-      <p class="card-desc">Self-hosted encrypted communications built for compliance.</p>
-      <a href="#" class="card-cta">Follow progress →</a>
+      <h2 class="card-title">Document Intelligence System</h2>
+      <p class="card-desc">A document processing and intelligence platform with
+        tenant-isolated architecture. Built for secure, compliance-sensitive
+        environments. Early access coming.</p>
+      <a href="#" class="card-cta">Learn more →</a>
+      <a href="/contact" class="card-interest">Interested in early access or collaboration? Get in touch →</a>
     </div>
     <div class="project-card">
-      <span class="card-tag">Architecture</span>
-      <h2 class="card-title">CMMC Lab Stack</h2>
-      <p class="card-desc">Full homelab architecture for CMMC Level 2 compliance.</p>
-      <a href="#" class="card-cta">Read more →</a>
+      <span class="card-tag tag-orange">Coming Soon</span>
+      <h2 class="card-title">Home Agent Orchestration</h2>
+      <p class="card-desc">A framework for orchestrating AI agents across home lab and
+        personal infrastructure. Design phase — more details coming soon.</p>
+      <a href="#" class="card-cta">Follow progress →</a>
+      <a href="/contact" class="card-interest">Want to know when this is ready? Get in touch →</a>
     </div>
-    <div class="project-card placeholder">
-      <span class="card-tag">Coming Soon</span>
-      <h2 class="card-title">More coming soon</h2>
-      <p class="card-desc">Additional projects in progress. Check back soon.</p>
-    </div>
+  </div>
+
+  <div class="patreon-line">
+    <a href="https://patreon.com/Chronopax" target="_blank" rel="noopener noreferrer" class="patreon-link">Support this work on Patreon →</a>
   </div>
 </RootLayout>
 
@@ -59,7 +66,7 @@ import RootLayout from "../../layouts/RootLayout.astro";
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 
     @media (max-width: 700px) {
       grid-template-columns: 1fr;
@@ -77,10 +84,6 @@ import RootLayout from "../../layouts/RootLayout.astro";
       border-color: var(--color-accent-orange);
     }
 
-    &.placeholder {
-      opacity: 0.5;
-    }
-
     .card-tag {
       display: block;
       font-size: 11px;
@@ -88,6 +91,10 @@ import RootLayout from "../../layouts/RootLayout.astro";
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 0.5rem;
+
+      &.tag-orange {
+        color: var(--color-accent-orange);
+      }
     }
 
     .card-title {
@@ -113,6 +120,34 @@ import RootLayout from "../../layouts/RootLayout.astro";
       &:hover {
         text-decoration: underline;
       }
+    }
+
+    .card-interest {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+      display: block;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-accent-teal);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .patreon-line {
+    margin-bottom: 3rem;
+  }
+
+  .patreon-link {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-accent-orange);
+      text-decoration: underline;
     }
   }
 </style>

@@ -2,35 +2,53 @@
 import RootLayout from "../../layouts/RootLayout.astro";
 ---
 
-<RootLayout title="Consulting — Chronopax" description="Work with Joe Burley on cloud architecture, Azure Government, CMMC compliance, and AI systems." width="md">
+<RootLayout title="Consulting — Chronopax" description="Cloud architecture, security infrastructure, and AI systems integration." width="md">
   <div class="page-header">
     <span class="eyebrow">Work with me</span>
     <h1>Consulting</h1>
   </div>
 
   <section class="intro-section">
-    <p>
-      Available for cloud architecture, Azure Government, CMMC compliance,
-      AI systems integration, and security infrastructure projects.
-      Open to contract/project work and select full-time opportunities.
-    </p>
-    <a href="/contact" class="btn btn-primary">Get in touch →</a>
+    <h2>Let's build something worth building.</h2>
+    <p>I work with organizations that need infrastructure done right — cloud
+      architecture, security stacks, AI integration, and compliance frameworks
+      that hold up under scrutiny. Based in San Diego. Available for contract
+      and project-based engagements.</p>
+    <p>If you're working on something interesting and need someone who has
+      actually built this stuff — reach out.</p>
+    <a href="/contact" class="btn btn-primary">Start a conversation →</a>
+  </section>
+
+  <section class="focus-section">
+    <h2>Areas of focus</h2>
+    <div class="focus-pills">
+      <span class="pill">Cloud Architecture</span>
+      <span class="pill">Security Infrastructure</span>
+      <span class="pill">AI Systems Integration</span>
+      <span class="pill">Compliance Frameworks</span>
+      <span class="pill">Network Architecture</span>
+      <span class="pill">Identity & Access Management</span>
+    </div>
   </section>
 
   <section class="creds-section">
     <h2>Certifications</h2>
-    <a href="https://credly.com/users/joeburley" target="_blank" rel="noopener" class="credly-link">
-      View verified credentials on Credly →
-    </a>
+    <p>Verified credentials available on Credly.</p>
+    <a href="https://www.credly.com/users/joseph-burley" target="_blank" rel="noopener noreferrer" class="text-link">View certifications →</a>
+  </section>
+
+  <section class="opportunity-section">
+    <h2>Open to the right opportunity</h2>
+    <p>Beyond project work, I'm selectively open to full-time roles where the
+      work is genuinely interesting and the compensation reflects the level.
+      If that sounds like your organization — LinkedIn is the best place to start.</p>
+    <a href="https://www.linkedin.com/in/burleyjoe/" target="_blank" rel="noopener noreferrer" class="text-link">Connect on LinkedIn →</a>
   </section>
 
   <section class="support-section">
     <h2>Support the work</h2>
-    <p>Interested in supporting ongoing open source and research projects?</p>
-    <div class="support-links">
-      <a href="#" class="btn btn-outline">GitHub Sponsors</a>
-      <a href="#" class="btn btn-outline">Ko-fi</a>
-    </div>
+    <p>Interested in supporting ongoing open source projects?</p>
+    <a href="https://patreon.com/Chronopax" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Support on Patreon →</a>
   </section>
 </RootLayout>
 
@@ -63,28 +81,64 @@ import RootLayout from "../../layouts/RootLayout.astro";
 
   .intro-section {
     margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
 
     p {
       color: var(--color-text-secondary);
       line-height: 1.7;
       max-width: 600px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
+
+    .btn-primary {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .focus-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .focus-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .pill {
+    background: var(--color-bg-card);
+    border: 0.5px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
   }
 
   .creds-section {
     margin-bottom: 3rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid var(--color-border);
+
+    p {
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
   }
 
-  .credly-link {
-    color: var(--color-accent-orange);
-    text-decoration: none;
-    font-size: 0.9rem;
+  .opportunity-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
 
-    &:hover {
-      text-decoration: underline;
+    p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -93,15 +147,19 @@ import RootLayout from "../../layouts/RootLayout.astro";
 
     p {
       color: var(--color-text-secondary);
-      margin-bottom: 1rem;
       font-size: 0.9rem;
+      margin-bottom: 1rem;
     }
   }
 
-  .support-links {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+  .text-link {
+    color: var(--color-accent-orange);
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .btn {

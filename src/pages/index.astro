@@ -13,13 +13,18 @@ const SITE_DESCRIPTION = siteConfig.description;
       <h1 class="hero-name">Joe Burley</h1>
       <p class="hero-title">Architect. Builder. The one who makes it work.</p>
       <p class="hero-bio">
-        I build cloud infrastructure, AI systems, and security stacks
-        that handle what actually matters. Based in San Diego.
-        Available for consulting — reach out if you have something worth building.
+        I've spent years building the infrastructure that organizations depend on —
+        cloud systems, security stacks, compliance frameworks, and AI integrations.
+        Currently based in San Diego. Available for consulting and open to
+        conversations about the right opportunities.
+
+        This site is also home to the projects I'm building independently —
+        open source tools, early-stage platforms, and experiments worth sharing.
       </p>
       <div class="hero-links">
-        <a href="https://linkedin.com/in/joeburley" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
-        <a href="https://credly.com/users/joeburley" target="_blank" rel="noopener" class="btn btn-outline">Credly</a>
+        <a href="https://www.linkedin.com/in/burleyjoe/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+        <a href="https://www.credly.com/users/joseph-burley" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Credly</a>
+        <a href="https://patreon.com/Chronopax" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Patreon</a>
         <a href="/contact" class="btn btn-primary">Contact</a>
       </div>
     </div>
@@ -36,22 +41,30 @@ const SITE_DESCRIPTION = siteConfig.description;
     </div>
     <div class="projects-grid">
       <div class="project-card">
-        <span class="card-tag">Live Project</span>
-        <h3 class="card-title">Document Intelligence Platform</h3>
-        <p class="card-desc">CUI-compliant document pipeline on Azure Government.</p>
-        <a href="#" class="card-cta">Try it →</a>
+        <span class="card-tag">Open Source</span>
+        <h3 class="card-title">Email Cleaner Agent</h3>
+        <p class="card-desc">An autonomous email management agent with a contributor economy
+          model. AGPL-3.0 licensed with a dual-licensing path for commercial use.
+          Built for people who want their inbox handled without giving up control.</p>
+        <a href="#" class="card-cta">Learn more →</a>
+        <a href="/contact" class="card-interest">Interested in contributing or following development? Get in touch →</a>
       </div>
       <div class="project-card">
         <span class="card-tag">In Development</span>
-        <h3 class="card-title">Secure Email System</h3>
-        <p class="card-desc">Self-hosted encrypted communications built for compliance.</p>
-        <a href="#" class="card-cta">Follow progress →</a>
+        <h3 class="card-title">Document Intelligence System</h3>
+        <p class="card-desc">A document processing and intelligence platform with
+          tenant-isolated architecture. Built for secure, compliance-sensitive
+          environments. Early access coming.</p>
+        <a href="#" class="card-cta">Learn more →</a>
+        <a href="/contact" class="card-interest">Interested in early access or collaboration? Get in touch →</a>
       </div>
       <div class="project-card">
-        <span class="card-tag">Architecture</span>
-        <h3 class="card-title">CMMC Lab Stack</h3>
-        <p class="card-desc">Full homelab architecture for CMMC Level 2 compliance.</p>
-        <a href="#" class="card-cta">Read more →</a>
+        <span class="card-tag tag-orange">Coming Soon</span>
+        <h3 class="card-title">Home Agent Orchestration</h3>
+        <p class="card-desc">A framework for orchestrating AI agents across home lab and
+          personal infrastructure. Design phase — more details coming soon.</p>
+        <a href="#" class="card-cta">Follow progress →</a>
+        <a href="/contact" class="card-interest">Want to know when this is ready? Get in touch →</a>
       </div>
     </div>
   </section>
@@ -96,6 +109,7 @@ const SITE_DESCRIPTION = siteConfig.description;
     line-height: 1.6;
     max-width: 480px;
     margin-bottom: 1.5rem;
+    white-space: pre-line;
   }
 
   .hero-links {
@@ -203,6 +217,10 @@ const SITE_DESCRIPTION = siteConfig.description;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 0.5rem;
+
+      &.tag-orange {
+        color: var(--color-accent-orange);
+      }
     }
 
     .card-title {
@@ -226,6 +244,19 @@ const SITE_DESCRIPTION = siteConfig.description;
       text-decoration: none;
 
       &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .card-interest {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-top: 0.5rem;
+      display: block;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-accent-teal);
         text-decoration: underline;
       }
     }

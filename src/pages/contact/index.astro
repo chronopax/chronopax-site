@@ -22,7 +22,7 @@ import RootLayout from "../../layouts/RootLayout.astro";
     <div class="field">
       <label for="subject">What's this about?</label>
       <select id="subject" name="subject" required>
-        <option value="" disabled selected>Select a topic</option>
+        <option value="" disabled selected>Select a topic...</option>
         <option value="consulting">Consulting inquiry</option>
         <option value="collaboration">Project collaboration</option>
         <option value="general">General question</option>
@@ -32,7 +32,7 @@ import RootLayout from "../../layouts/RootLayout.astro";
 
     <div class="field">
       <label for="message">Message</label>
-      <textarea id="message" name="message" required minlength="50" rows="6"></textarea>
+      <textarea id="message" name="message" required minlength="50" rows="6" placeholder="Please include enough detail for me to respond usefully. Minimum 50 characters."></textarea>
       <span class="field-hint">Please include enough detail for me to respond usefully.</span>
     </div>
 
@@ -42,7 +42,7 @@ import RootLayout from "../../layouts/RootLayout.astro";
     <button type="submit" class="btn-submit">Send Message</button>
   </form>
 
-  <p class="footer-note">I read every message personally. Expect a response within a few days.</p>
+  <p class="footer-note">I read every message personally. Typically respond within a few days. No spam, no cold outreach — this form is for real conversations.</p>
 </RootLayout>
 
 <style lang="scss">
