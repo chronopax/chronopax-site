@@ -1,0 +1,47 @@
+---
+import RootLayout from "../layouts/RootLayout.astro";
+---
+
+<RootLayout title="Page not found — Chronopax" description="The page you were looking for doesn't exist." width="sm">
+  <section class="not-found">
+    <span class="eyebrow">404</span>
+    <h1>Page not found</h1>
+    <p>That page doesn't exist or has moved.</p>
+    <p><a href="/">Back to the homepage →</a></p>
+  </section>
+</RootLayout>
+
+<style lang="scss">
+  .not-found {
+    margin: 4rem 0;
+
+    p {
+      color: var(--color-text-secondary);
+      margin-top: 0.75rem;
+    }
+
+    a {
+      color: var(--color-accent-orange);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    color: var(--color-accent-teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+  }
+</style>
