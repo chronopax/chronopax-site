@@ -53,24 +53,22 @@ main {
   flex-grow: 1;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
+html {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
 button,
-a,
-ul,
-ol,
-li,
-td,
-th
-{
-  font-family: 'Comic Neue', sans-serif;
-  letter-spacing: .75px;
-  word-spacing: 1px;
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+// Small uppercase labels use the monospace face
+.eyebrow,
+.card-tag,
+.post-tag {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
 h1,
@@ -95,12 +93,12 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h3 {
   font-size: 1.6rem;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h4 {
