@@ -1,5 +1,7 @@
 ---
 import RootLayout from "../../layouts/RootLayout.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { projects } from "@/data/projects";
 ---
 
 <RootLayout title="Projects — Chronopax" description="What Joe Burley is building." width="md">
@@ -9,32 +11,7 @@ import RootLayout from "../../layouts/RootLayout.astro";
   </section>
 
   <div class="projects-grid">
-    <div class="project-card">
-      <span class="card-tag">Open Source</span>
-      <h2 class="card-title">Email Cleaner Agent</h2>
-      <p class="card-desc">An autonomous email management agent with a contributor economy
-        model. AGPL-3.0 licensed with a dual-licensing path for commercial use.
-        Built for people who want their inbox handled without giving up control.</p>
-      <a href="#" class="card-cta">Learn more →</a>
-      <a href="/contact" class="card-interest">Interested in contributing or following development? Get in touch →</a>
-    </div>
-    <div class="project-card">
-      <span class="card-tag">In Development</span>
-      <h2 class="card-title">Document Intelligence System</h2>
-      <p class="card-desc">A document processing and intelligence platform with
-        tenant-isolated architecture. Built for secure, compliance-sensitive
-        environments. Early access coming.</p>
-      <a href="#" class="card-cta">Learn more →</a>
-      <a href="/contact" class="card-interest">Interested in early access or collaboration? Get in touch →</a>
-    </div>
-    <div class="project-card">
-      <span class="card-tag tag-orange">Coming Soon</span>
-      <h2 class="card-title">Home Agent Orchestration</h2>
-      <p class="card-desc">A framework for orchestrating AI agents across home lab and
-        personal infrastructure. Design phase — more details coming soon.</p>
-      <a href="#" class="card-cta">Follow progress →</a>
-      <a href="/contact" class="card-interest">Want to know when this is ready? Get in touch →</a>
-    </div>
+    {projects.map((project) => <ProjectCard project={project} headingLevel="h2" />)}
   </div>
 
   <div class="patreon-line">
@@ -70,69 +47,6 @@ import RootLayout from "../../layouts/RootLayout.astro";
 
     @media (max-width: 700px) {
       grid-template-columns: 1fr;
-    }
-  }
-
-  .project-card {
-    background: var(--color-bg-card);
-    border: 0.5px solid var(--color-border);
-    border-radius: 8px;
-    padding: 1.25rem;
-    transition: border-color 0.2s;
-
-    &:hover {
-      border-color: var(--color-accent-orange);
-    }
-
-    .card-tag {
-      display: block;
-      font-size: 11px;
-      color: var(--color-accent-teal);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-
-      &.tag-orange {
-        color: var(--color-accent-orange);
-      }
-    }
-
-    .card-title {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--color-text-primary);
-      margin-bottom: 0.4rem;
-    }
-
-    .card-desc {
-      font-size: 0.875rem;
-      color: var(--color-text-secondary);
-      line-height: 1.5;
-    }
-
-    .card-cta {
-      font-size: 0.875rem;
-      color: var(--color-accent-orange);
-      margin-top: 0.75rem;
-      display: block;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    .card-interest {
-      font-size: 0.8rem;
-      color: var(--color-text-muted);
-      margin-top: 0.5rem;
-      display: block;
-      text-decoration: none;
-
-      &:hover {
-        color: var(--color-accent-teal);
-        text-decoration: underline;
-      }
     }
   }
 

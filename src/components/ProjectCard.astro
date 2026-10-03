@@ -1,0 +1,90 @@
+---
+import type { Project } from "@/data/projects";
+
+interface Props {
+  project: Project;
+  headingLevel?: "h2" | "h3";
+}
+
+const { project, headingLevel: Heading = "h3" } = Astro.props;
+const isExternal = project.link?.href.startsWith("http");
+---
+
+<div class="project-card">
+  <span class:list={["card-tag", { "tag-orange": project.statusColor === "orange" }]}>{project.status}</span>
+  <Heading class="card-title">{project.title}</Heading>
+  <p class="card-desc">{project.description}</p>
+  {project.link && (
+    <a
+      href={project.link.href}
+      class="card-cta"
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >{project.link.label ?? "Learn more →"}</a>
+  )}
+  <a href="/contact" class="card-interest">{project.interest}</a>
+</div>
+
+<style lang="scss">
+  .project-card {
+    background: var(--color-bg-card);
+    border: 0.5px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: var(--color-accent-orange);
+    }
+  }
+
+  .card-tag {
+    display: block;
+    font-size: 11px;
+    color: var(--color-accent-teal);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+
+    &.tag-orange {
+      color: var(--color-accent-orange);
+    }
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 0.4rem;
+  }
+
+  .card-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .card-cta {
+    font-size: 0.875rem;
+    color: var(--color-accent-orange);
+    margin-top: 0.75rem;
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .card-interest {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.75rem;
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-accent-teal);
+      text-decoration: underline;
+    }
+  }
+</style>

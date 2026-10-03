@@ -16,7 +16,7 @@
 // =============================================
 
 body {
-  background-image: url('/bg-night.jpg');
+  background-image: url('/bg-night.webp');
   background-size: cover;
   background-position: center 30%;
   background-attachment: fixed;
@@ -36,7 +36,7 @@ body::before {
 }
 
 html:not(.dark) body {
-  background-image: url('/bg-day.jpg');
+  background-image: url('/bg-day.webp');
 }
 
 html:not(.dark) body::before {
@@ -68,7 +68,7 @@ li,
 td,
 th
 {
-  font-family: 'Comic Neue', 'Klee One', sans-serif;
+  font-family: 'Comic Neue', sans-serif;
   letter-spacing: .75px;
   word-spacing: 1px;
 }

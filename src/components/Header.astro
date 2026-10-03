@@ -15,11 +15,11 @@ const SITE_TITLE = siteConfig.title;
     )}
 >
   <nav>
-    <h1>
+    <div class="site-title">
       <a href="/" id="title" class="link">
         {SITE_TITLE}
       </a>
-    </h1>
+    </div>
     <div class="internal-links">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>
@@ -39,8 +39,9 @@ const SITE_TITLE = siteConfig.title;
         padding: 0.75rem;
     }
 
-    h1 > #title {
+    #title {
         font-size: 2rem;
+        font-weight: bold;
     }
 
     #title {
