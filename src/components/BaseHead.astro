@@ -3,7 +3,6 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.scss';
 import siteConfig from '../../content/site.json';
-import Analytics from '@vercel/analytics/astro'
 
 const FAVICON_SRC = siteConfig.favicon;
 
@@ -15,13 +14,10 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = '/avatar.png' } = Astro.props;
 
-import '@fontsource/comic-neue/300.css';
 import '@fontsource/comic-neue/400.css';
 import '@fontsource/comic-neue/700.css';
-import '@fontsource/klee-one/400.css';
-import '@fontsource/klee-one/600.css';
 import '@fontsource-variable/jetbrains-mono';
 import DarkModePreload from './DarkModePreload.astro';
 ---
@@ -49,22 +45,11 @@ import DarkModePreload from './DarkModePreload.astro';
 <meta property="og:image" content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
-
-<!-- Analytics -->
-<Analytics/>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.url)} />
 
 <!-- Dark Mode Preload -->
 <DarkModePreload/>
-
-<!-- Katex -->
-<link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
-    integrity="sha256-GQlRJzV+1tKf4KY6awAMkTqJ9/GWO3Zd03Fel8mFLnU="
-    crossorigin="anonymous"
-/>

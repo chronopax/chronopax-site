@@ -1,9 +1,12 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro";
 import siteConfig from '../../content/site.json';
+import ProjectCard from "@/components/ProjectCard.astro";
+import { projects } from "@/data/projects";
 
 const SITE_TITLE = siteConfig.title;
 const SITE_DESCRIPTION = siteConfig.description;
+const featured = projects.filter((p) => p.featured);
 ---
 
 <RootLayout title={SITE_TITLE} description={SITE_DESCRIPTION} width="md">
@@ -34,7 +37,7 @@ const SITE_DESCRIPTION = siteConfig.description;
       </div>
     </div>
     <div class="hero-avatar">
-      <img src="/avatar.png" alt="Joe Burley" />
+      <img src="/avatar.webp" alt="Joe Burley" width="180" height="270" />
     </div>
   </section>
 
@@ -45,33 +48,9 @@ const SITE_DESCRIPTION = siteConfig.description;
       <h2>Projects</h2>
     </div>
     <div class="projects-grid">
-      <div class="project-card">
-        <span class="card-tag">Open Source</span>
-        <h3 class="card-title">Email Cleaner Agent</h3>
-        <p class="card-desc">An autonomous email management agent with a contributor economy
-          model. AGPL-3.0 licensed with a dual-licensing path for commercial use.
-          Built for people who want their inbox handled without giving up control.</p>
-        <a href="#" class="card-cta">Learn more →</a>
-        <a href="/contact" class="card-interest">Interested in contributing or following development? Get in touch →</a>
-      </div>
-      <div class="project-card">
-        <span class="card-tag">In Development</span>
-        <h3 class="card-title">Document Intelligence System</h3>
-        <p class="card-desc">A document processing and intelligence platform with
-          tenant-isolated architecture. Built for secure, compliance-sensitive
-          environments. Early access coming.</p>
-        <a href="#" class="card-cta">Learn more →</a>
-        <a href="/contact" class="card-interest">Interested in early access or collaboration? Get in touch →</a>
-      </div>
-      <div class="project-card">
-        <span class="card-tag tag-orange">Coming Soon</span>
-        <h3 class="card-title">Home Agent Orchestration</h3>
-        <p class="card-desc">A framework for orchestrating AI agents across home lab and
-          personal infrastructure. Design phase — more details coming soon.</p>
-        <a href="#" class="card-cta">Follow progress →</a>
-        <a href="/contact" class="card-interest">Want to know when this is ready? Get in touch →</a>
-      </div>
+      {featured.map((project) => <ProjectCard project={project} />)}
     </div>
+    <a href="/projects" class="all-projects">See all projects →</a>
   </section>
 </RootLayout>
 
@@ -204,66 +183,15 @@ const SITE_DESCRIPTION = siteConfig.description;
     }
   }
 
-  .project-card {
-    background: var(--color-bg-card);
-    border: 0.5px solid var(--color-border);
-    border-radius: 8px;
-    padding: 1.25rem;
-    transition: border-color 0.2s;
+  .all-projects {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--color-accent-orange);
+    text-decoration: none;
 
     &:hover {
-      border-color: var(--color-accent-orange);
-    }
-
-    .card-tag {
-      display: block;
-      font-size: 11px;
-      color: var(--color-accent-teal);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-
-      &.tag-orange {
-        color: var(--color-accent-orange);
-      }
-    }
-
-    .card-title {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--color-text-primary);
-      margin-bottom: 0.4rem;
-    }
-
-    .card-desc {
-      font-size: 0.875rem;
-      color: var(--color-text-secondary);
-      line-height: 1.5;
-    }
-
-    .card-cta {
-      font-size: 0.875rem;
-      color: var(--color-accent-orange);
-      margin-top: 0.75rem;
-      display: block;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    .card-interest {
-      font-size: 0.8rem;
-      color: var(--color-text-muted);
-      margin-top: 0.5rem;
-      display: block;
-      text-decoration: none;
-
-      &:hover {
-        color: var(--color-accent-teal);
-        text-decoration: underline;
-      }
+      text-decoration: underline;
     }
   }
 </style>

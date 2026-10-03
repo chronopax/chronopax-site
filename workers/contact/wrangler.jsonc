@@ -1,0 +1,19 @@
+// Contact form backend. Deploy with: npx wrangler deploy (from this folder).
+// Set the Turnstile secret once with: npx wrangler secret put TURNSTILE_SECRET
+{
+  "name": "chronopax-contact",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "allowed_sender_addresses": ["website@notify.chronopax.com"],
+      "allowed_destination_addresses": ["joe@chronopax.com"]
+    }
+  ],
+  "vars": {
+    "FROM_ADDRESS": "website@notify.chronopax.com",
+    "TO_ADDRESS": "joe@chronopax.com"
+  }
+}
