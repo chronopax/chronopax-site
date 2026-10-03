@@ -16,9 +16,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = '/avatar.png' } = Astro.props;
 
-import '@fontsource/comic-neue/400.css';
-import '@fontsource/comic-neue/700.css';
-import '@fontsource-variable/jetbrains-mono';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-sans/700.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
 import DarkModePreload from './DarkModePreload.astro';
 ---
 
